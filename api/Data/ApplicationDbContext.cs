@@ -26,10 +26,12 @@ namespace api.Data
             base.OnModelCreating(builder);
             List<IdentityRole> roles = new List<IdentityRole>{
                 new IdentityRole{
+                    Id = "Admin",
                     Name = "Admin",
                     NormalizedName = "ADMIN"
                 },
                 new IdentityRole{
+                    Id = "User",
                     Name = "User",
                     NormalizedName = "USER"
                 },
