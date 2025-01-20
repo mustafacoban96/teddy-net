@@ -23,12 +23,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>{
 //AddTransient: Servis her çağrıldığın da yeni bir instance oluşturur. Yani aynı istek aşamasında da farklı isteklerde de servis birden fazla kez çağrılıyorsa servis her çağrıldığında yeni bir instance oluşturur.
 
 builder.Services.AddScoped<IStockRepository,StockRepository>();
+builder.Services.AddScoped<ICommentRepository,CommentRepository>();
 
 //AddScope: it defines lifetime
 
-
-
 ///////
+///
+
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
+
 
 
 var app = builder.Build();
