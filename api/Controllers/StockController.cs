@@ -72,12 +72,6 @@ namespace api.Controllers
 
 
 
-
-
-
-
-
-
         // [HttpPost]
         // public IActionResult Create([FromBody] CreateStockRequestDto createStockRequestDto){
         //     var stockModel = createStockRequestDto.ToStockFromCreateDTO();
