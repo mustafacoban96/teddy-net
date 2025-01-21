@@ -46,7 +46,7 @@ namespace api.Repository
         {
             //For each Stock record, this includes its associated Comments records in the query via include func.
             // it is lazy loading as default.
-            var stocks = _context.Stocks.Include(c => c.Comments).AsQueryable();
+            var stocks = _context.Stocks.Include(c => c.Comments).ThenInclude(a => a.AppUser).AsQueryable();
             if(!string.IsNullOrWhiteSpace(query.CompanyName)){
                 stocks = stocks.Where(s => s.CompanyName.Contains(query.CompanyName));
             }
